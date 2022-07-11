@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/banca
+  application:
+    name: products-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}
+    status-page-url-path: /swagger-ui/
